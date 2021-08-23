@@ -2,17 +2,92 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>
+            {% block title %}
+                Guide Restaurants
+            {% endblock %}
+        </title>
         {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+                and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        {% block javascripts %}{#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
+
+    <nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Guide des meilleurs restaurants</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href={{path("restaurants")}}>
+                                Accueil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{path("restaurants_all")}}>
+                                Tous les restaurants
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{path("restaurants_add")}}>
+                                Ajouter un restaurant
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{path("restaurants_apropos")}}>
+                                A propos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{path("app_login")}}>
+                                Se connecter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{path("register")}}>
+                                Créez votre comptre
+                            </a>
+                        </li>
+                        {# <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Action
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Another action
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Something else here
+                                    </a>
+                                </li>
+                            </ul> #}
+                        {# </li> #}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
     <body>
         {% block body %}{% endblock %}
     </body>

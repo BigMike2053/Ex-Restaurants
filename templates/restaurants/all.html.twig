@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>
+            Le guide restaurants de Père Ducrasse
+        </h1>
+    </div>
+
+    {% for restaurant in restaurants %}
+        <div class="col-md-4">
+            <div class="mr-1" style="border:black solide 1px">
+
+                <h2 style="color:blue">
+                    {{ restaurant.name }}
+                </h2>
+                <p>
+                    {{ restaurant.type }}
+                </p>
+                <p>
+                    {{ restaurant.city }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}
